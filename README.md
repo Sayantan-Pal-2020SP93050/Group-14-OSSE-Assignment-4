@@ -1,6 +1,10 @@
 # HolidayParty
 M.Tech. BITS WILP PILANI OSSE Project Assignment-3
 
+# Group Members:
+Sayantan Pal(2020sp93050)
+Anand Thayur(2020sp)
+
 ### Objective: Contributing to Open Source Software
 
 ### Technologies used: Git, GitHub, GitHub Desktop, Eclipse IDE / Visual Studio Code / Atom
