@@ -19,7 +19,6 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/registerPage", method = RequestMethod.GET)
 	public String registerPage(@ModelAttribute("register") RegistrationBean registrationBean, BindingResult result) {
-		System.out.println("API reached");
 		return "registrationpage";
 	}
 
