@@ -7,13 +7,15 @@ import org.springframework.validation.Validator;
 
 import com.model.RegistrationBean;
 
+import com.constants.Constant;
+
 @Component
 public class CustomValidator implements Validator {
 
 	public void validate(Object obj, Errors error) {
 
 		RegistrationBean registorBean = (RegistrationBean) obj;
-		ValidationUtils.rejectIfEmptyOrWhitespace(error, "userName", "error.userName", "User Name cannot be blank");
+		ValidationUtils.rejectIfEmptyOrWhitespace(error, Constant.userName, Constant.errorUserName, Constant.userNameBlankValMsg);
 		long phone = registorBean.getContactNumber();
 		String str = String.valueOf(phone);
 		if ((str.length() != 10)) {
