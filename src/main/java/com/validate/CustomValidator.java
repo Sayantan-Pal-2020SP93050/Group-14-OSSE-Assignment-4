@@ -19,18 +19,18 @@ public class CustomValidator implements Validator {
 		long phone = registorBean.getContactNumber();
 		String str = String.valueOf(phone);
 		if ((str.length() != 10)) {
-			error.rejectValue("contactNumber", "error.contactNumber",
-					"Contact Number should be of 10 digits/ Contact Number should not be blank");
+			error.rejectValue(Constant.contactNo, Constant.errorContactNo,
+					Constant.errorContactNoValMsg);
 		}
-		ValidationUtils.rejectIfEmptyOrWhitespace(error, "emailId", "error.emailId", "Email ID cannot be blank");
-		ValidationUtils.rejectIfEmptyOrWhitespace(error, "confirmEmailId", "error.confirmEmailId",
-				"Confirm Email ID cannot be blank");
+		ValidationUtils.rejectIfEmptyOrWhitespace(error, Constant.emailId, Constant.errorEmailValMsg, Constant.emailBlankValMsg);
+		ValidationUtils.rejectIfEmptyOrWhitespace(error, Constant.confirmEmailId, Constant.errorConfirmEmailValMsg,
+				Constant.confirmEmailNameBlankValMsg);
 		if (!(registorBean.getConfirmEmailId().equals(registorBean.getEmailId()))) {
-			error.rejectValue("emailId", "error.emailId", "Should be proper email ID format");
-			error.rejectValue("confirmEmailId", "confirmEmailId", "Should be proper email ID format");
+			error.rejectValue(Constant.emailId, Constant.errorEmailValMsg, Constant.emailFormatValMsg);
+			error.rejectValue(Constant.confirmEmailId, Constant.confirmEmailId, Constant.emailFormatValMsg);
 		}
 		if (!(registorBean.isStatus())) {
-			error.rejectValue("status", "error.status", "please agree to the terms and conditions");
+			error.rejectValue(Constant.status, Constant.errorStat, Constant.termsAndCondMsg);
 		}
 
 	}
