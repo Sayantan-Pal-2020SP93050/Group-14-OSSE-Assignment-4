@@ -19,6 +19,7 @@ public class CustomValidator implements Validator {
 		if (!(str.length() == 10)) {
 			error.rejectValue("contactNumber", "error.contactNumber",
 					"Conatact Number should be of 10 digits/ Contact Number should not be blank");
+					System.out.println("Print contact");
 		}
 		ValidationUtils.rejectIfEmptyOrWhitespace(error, "emailId", "error.emailId", "Email ID cannot be blank");
 		ValidationUtils.rejectIfEmptyOrWhitespace(error, "confirmEmailId", "error.confirmEmailId",
