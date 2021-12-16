@@ -16,7 +16,7 @@ public class CustomValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(error, "userName", "error.userName", "User Name cannot be blank");
 		long phone = registorBean.getContactNumber();
 		String str = String.valueOf(phone);
-		if (!(str.length() == 10)) {
+		if ((str.length() != 10)) {
 			error.rejectValue("contactNumber", "error.contactNumber",
 					"Contact Number should be of 10 digits/ Contact Number should not be blank");
 		}
